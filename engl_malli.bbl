@@ -1,0 +1,39 @@
+\begin{thebibliography}{WYHR14}
+\expandafter\ifx\csname url\endcsname\relax
+  \def\url#1{{\tt #1}}\fi
+\expandafter\ifx\csname urlprefix\endcsname\relax\def\urlprefix{URL }\fi
+\input babelbst.tex
+\newcommand{\Capitalize}[1]{\uppercase{#1}}
+\newcommand{\capitalize}[1]{\expandafter\Capitalize#1}
+
+\bibitem[BY09]{surprise}
+Bae, B.-C. \bbland{} Young, R., Evaluation of a computational model of surprise
+  arousal in narratives.
+\newblock  {\em Affective Computing and Intelligent Interaction and Workshops,
+  2009. ACII 2009. 3rd International Conference on}, Sept 2009, \bblpages{}
+  1--6.
+
+\bibitem[PyPS01]{mexica}
+P{\'e}rez~y P{\'e}rez, R. \bbland{} Sharples, M., {MEXICA}: A computer model of
+  a cognitive account of creative writing.
+\newblock {\em Journal of Experimental \& Theoretical Artificial Intelligence},
+  13,2(2001), \bblpages{} 119--139.
+
+\bibitem[RY10]{planning:2010:NPB:1946417.1946422}
+Riedl, M.~O. \bbland{} Young, R.~M., Narrative planning: Balancing plot and
+  character.
+\newblock {\em J. Artif. Int. Res.}, 39,1(2010), \bblpages{} 217--268.
+\newblock \urlprefix\url{http://dl.acm.org/citation.cfm?id=1946417.1946422}.
+
+\bibitem[WYHR14]{narrativeconflict}
+Ware, S., Young, R., Harrison, B. \bbland{} Roberts, D., A computational model
+  of plan-based narrative conflict at the fabula level.
+\newblock {\em Computational Intelligence and AI in Games, IEEE Transactions
+  on}, 6,3(2014), \bblpages{} 271--288.
+
+\bibitem[ZO10]{analogy}
+Zhu, J. \bbland{} Ontanon, S., Towards analogy-based story generation.
+\newblock  {\em ICCC}, 2010, \bblpages{} 75--84,
+  \urlprefix\url{http://www.iiia.csic.es/files/pdfs/analogy-story.pdf}.
+
+\end{thebibliography}

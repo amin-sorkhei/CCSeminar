@@ -1,0 +1,15 @@
+\select@language {english}
+\contentsline {section}{\numberline {1}Introduction}{1}
+\contentsline {section}{\numberline {2}Narrative and Planning}{1}
+\contentsline {subsection}{\numberline {2.1}Introduction to Narrative}{1}
+\contentsline {subsection}{\numberline {2.2}planning}{1}
+\contentsline {subsection}{\numberline {2.3}Introduction to planning}{1}
+\contentsline {subsubsection}{\numberline {2.3.1}Customized planning versus classical planning }{2}
+\contentsline {subsection}{\numberline {2.4}Domain theory}{4}
+\contentsline {subsection}{\numberline {2.5}Tuned for of planning}{4}
+\contentsline {section}{\numberline {3}Character intentionality}{4}
+\contentsline {section}{\numberline {4}Character believability}{4}
+\contentsline {section}{\numberline {5}MEXICA: A planning based narrative system}{4}
+\contentsline {section}{\numberline {6}Discussion}{5}
+\contentsline {section}{\numberline {7}Conclusion}{5}
+\contentsline {section}{References}{5}

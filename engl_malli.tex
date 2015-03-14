@@ -1,0 +1,99 @@
+\documentclass[english]{tktltiki}
+\usepackage[pdftex]{graphicx}
+\usepackage{subfigure}
+\usepackage{url}
+
+\usepackage[latin9]{inputenc}
+\usepackage[]{algorithm2e}
+
+\begin{document}
+%\doublespacing
+%\singlespacing
+\onehalfspacing
+\title{Planning Based Computational Narrative With an Emphasis on Surprise Arousal  }
+\author{Amin Sorkhei}
+%\date{21.09.2014}
+
+\maketitle
+
+\numberofpagesinformation{\numberofpages\ pages + \numberofappendixpages\ appendices}
+\classification{}
+
+%\keywords{AI , Minimax Algorithm, \(A^*\) Algorithm, Real Time Strategy games, Planning}
+
+\begin{abstract}
+At the galloping rate that computational creativity is flourishing, narrative systems has an important role to play and different computer scientists have tried to come up with methods and approaches in order to create intelligent writers for educational and entraining purposes \cite{planning:2010:NPB:1946417.1946422}. Through the reach history of this newly emerged field, different well known methods like planning based computational narratives have been proposed while this category has been belittled to goal-driven problem-solving aesthetics \cite {analogy}. This short report has as its purpose to propose some general guidelines about computational narratives which are the building blocks of successful systems like MEXICA.
+\end{abstract}
+
+\mytableofcontents
+\section{Introduction}
+As the first step, in order to have systems capable of narrating in a plausible way, some requirements must be satisfied by the system. To put this in other words the methodology and constraints followed by human writers, must be codded to the system. These requirements and constraints are called \textit{'Cognitive Account'}. Additionally, the whole process of writing in human writers can be considered as a cycle of \textit{engagement} and \textit{reflection}. 
+\section{Narrative and Planning}
+This section provides the reader with some background about both narrative and planning as the foundations of computational narrative. This section embarks on with a quick overview on narrative and what it is composed of.
+\subsection{Introduction to Narrative}
+This section describes \textit{fabula} and \textit{sjuzet}.
+Fabula is the general content of the narrative, loosely speaking, fabula is what the story is going to talk about. On the other hand \textit{sjuzet} is the way the story is going to be presented. To put this in oder words, sjuzet decides the order of presentation of events in fabula.
+\subsection{planning}
+This section tries to provide the reader with an overview on planning and presents detailed reasons whether the classic form of planning can be used a building block for computational narrative or not. More importantly some specific language used in planning for story generation will be presented and finalizes with a brief introduction to customized planning algorithm for narrative generation. 
+\subsection{Introduction to planning}
+Planning--in general terms-- can be considered as one of the well established and old topics in Artificial Intelligence(AI). In the simplest form, through the planning process, intelligent agent tries to come up with a sequence of actions in order to accomplish a predefined goal. Formally planning can be considered using a state-system transition as a 4-tuple $\Sigma = (S,A,E,\gamma)$\newline
+$S=\{s_1,s_2,...\}$ is a set of states used to describe the world in a given moment\newline
+$A=\{a_1,a_2,...\}$ is a set of actions which can be performed by the agent\newline
+$E=\{e_1,e_2,...\}$ is a set of events which can be performed independent of the agent like having an accident.\newline
+$\gamma = S\times(A \cup E) \longrightarrow 2^s$ is a transition function which transits the current state of the world based on performed action or observed event. \newline
+Trivially for each planning problem, it is required to have a starting state and a goal state where the final goal on the planning can be described as getting started at starting point, executing the planned sequence of actions and reaching the final goal.
+Solving 8-tile puzzle can be considered as a simple example of planning problem where actions are moving tiles to the blank area and states are one of the $9!$ possible permutations of tiles. It is noteworthy that in this example, the event set is an empty set.
+As the final remark, planning can be divided to partial-order and total order planning. In partial-order some actions can be switched with each other while in the latter form --total-order planning-- switching actions results in total failure.
+After this brief introduction to planning, a pivotal question can be whether this general form of planning can be considered as a medium for narrative generation or not. The answer to this question will be investigated in detail through the upcoming sections.
+\subsubsection{Customized planning versus classical planning }
+As we are familiar with basics of planning, one might consider this off-the-shelf form of planning as the building block of narrative generation. To put this in more details, based on this methodology, each character in the story can be considered as an agent who tries to final accomplish the final goal in the story by doing some actions. This naive idea gives some fundamental ideas about narrative generation while it is too simple to be be deployed to generate narratives.
+The most important defect regards this methodology is the fact that, the final goal of the story may be totally different from the goal of each agent (planner). To put this in other words, believable stories are built upon believable characters which in return requires each character to have unique intentions --which may or may not be the same as the final goal of the main plot-- and must perform believable actions justifying the unique goal regarding the character \cite{planning:2010:NPB:1946417.1946422}. As an illustration to this, consider the following plot of a story which is obtained from \cite{planning:2010:NPB:1946417.1946422}:
+\begin{flushleft}
+`\textit{There are three characters in the world, a king,a princess and a knight. All these characters live in castle where there is a tower where each character can be locked up. The final goal of the story is that the princess is locked up in the tower and the king is dead.}'
+\end{flushleft}
+By using the naive idea of using off-the-shelf classical planning algorithm, the following story may be generated
+\begin{flushleft}
+\textit{1.The princess kills the king \newline 2.The princess locks herself in the tower}
+\end{flushleft}
+which is not believable to human audience at all, while the plan is totally valid as it starts from the starting position and transforms the world to the goal state where the king is dead and the princess is locked in the tower. From the logical and causal point of view the story does not ring any bell in the human audience to persuade him or her about the intention of the characters. Why does the princess kill the king and why dose she lock herself in the tower. More importantly, is it a believable action for a character to lock him or herself in a place? . Since there is no rationale answer to these questions, the believability and the intentionality of characters is demolished.
+The following example depicts a narrative which totally satisfies all the requirements of intentionality and believability of characters as well as reaching the predefined goals.
+\begin{flushleft}
+\textit{1.The king locks the princess in the tower \newline 2.The knight kills the king}
+\end{flushleft} 
+In this case, the human reader can easily reason the intentionality of the characters. The princess has done some thing which should have agonized the king and the the king, in return, locked the princess in the tower and the knight kills the king as the revenge.
+As the conclusion to this section, it seems inevitable to look for a tuned version of the planning algorithm for story generation. More importantly, in addition to a tuned version of planning, character intentionality and believability requires a \textit{domain theory} where possible actions are defined based on the preconditions and each action has an effect, which is recorded to be considered as precondition for further actions.
+\subsection{Domain theory}
+this section describes two domain theories, the PDDL and STRIP, where the latter one has an emphasis on narrative generation.  
+\subsection{Tuned for of planning}
+This section describes the first tuned form of the planning algorithm for narrative generation(POCL plan) 
+\section{Character intentionality}
+The character intentionality will be further discussed here
+\section{Character believability}
+Character believability, with an emphasis on believable actions comes here.
+\section{MEXICA: A planning based narrative system}
+Based on the cognitive account, including dictated constraints and requirements, the writer probes the long term memory (LTM) and tries to write some novel and interesting ideas as part of the story. This step is called engagement. It may happen that probing the LTM fails. In this case, the writer needs to bring the topic into conscious memory, review his text and others' story and finally select some new ideas. This phase is called reflection \cite{mexica}.
+In order to follow this paradigm, it is necessary to redefine the reflection and engagement process in computers. through the engagement process, MEXICA comes up with some text that is driven by constraints. In reflection state, MEXICA, breaks impasses and evaluates the novelty of the story. As a rule of thumb, MEXICA is required to be fed with some initial data which is nothing but some written stories stored in LTM and called \textit{Previous Stories}. All these stories are composed of two components, explicit elements which are clearly mentioned in the story, and tacit elements that are implied by the story. These tacit and explicit elements are stored in a structure called \textit{story-world} and are further used as the guideline to probe the LTM.
+It is quite noteworthy to discuss the constraints obtained from explicit and tacit elements in more details, as they are the key elements in driving new and novel text. MEXICA tries to proceed the story based on valid actions. In order to define valid actions, MEXICA requires to define some post conditions that are the results of previous actions. these post conditions are all stored as constraints. As an illustration to this, consider this action \textit{The princess cure the eagle knight's injuries in the palace}. This simple action brings about lots of latent and explicit postconditions, which are all required to be updated and saved.
+
+\section{Discussion}
+At this stage, the main question that crosses mind is that how the classical planning algorithms can be configured, in order to satisfy the intentionality and believability of characters. In more details, in addition to a tuned version of planning, a sort of languages proves to be necessary in order to record the pre and post-conditions of actions. Thus in this case the new planning algorithm can come up with plans where the believability and intentionality of characters are preserved. Finally, there a thought provoking idea regrading the centralization of the algorithm. To put this in other words, are planning algorithms supposed to be centralized or one can consider each character as an agent cooperating with other to accomplish some goals.\cite{surprise} \cite{narrativeconflict}
+\section{Conclusion}
+In this seminar, the paper tries to come ups with methods about analogy based-story generation and approaches that keep the story coherent and interesting. Further details about how computational narratives try to avoid boringness by evaluating the quality of the generated story will be presented. 
+
+
+
+
+
+%\nocite{*}
+\bibliographystyle{tktl}
+\bibliography{lahteet}
+
+\lastpage
+
+\appendices
+
+\pagestyle{empty}
+
+\end{document}
+
+
